@@ -1,0 +1,26 @@
+<h2>Cadastrar pedido</h2>
+
+<form (ngSubmit)="cadastrar()">
+  <label for="cliente">Nome do cliente:</label>
+  <input
+    id="cliente"
+    name="cliente"
+    [(ngModel)]="cliente"
+    placeholder="Digite o nome do cliente"
+    required
+  />
+
+  <label for="descricao">Descrição do pedido:</label>
+  <input
+    id="descricao"
+    name="descricao"
+    [(ngModel)]="descricao"
+    placeholder="Digite a descrição do pedido"
+    required
+  />
+
+  <button type="submit">Cadastrar</button>
+</form>
+
+<br /><br />
+<a routerLink="/listar">Ver lista de pedidos</a>

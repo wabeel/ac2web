@@ -1,0 +1,24 @@
+<h2>Pedidos</h2>
+
+@if (pedido.length === 0) {
+  <p>Nenhum pedido cadastrado.</p>
+} @else {
+  @for (pedido of pedido; track pedido.id) {
+    <div>
+      <strong>{{ pedido.cliente }}</strong>
+      <p>{{ pedido.descricao }}</p>
+      <p>Status: {{ pedido.status }}</p>
+
+      @if (!pedido.entregue) {
+        <button (click)="concluir(pedido.id)">
+          Marcar como entregue
+        </button>
+      }
+
+      <button (click)="remover(pedido.id)">
+        Remover
+      </button>
+    </div>
+
+  }
+}
